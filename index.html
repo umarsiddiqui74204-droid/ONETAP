@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,55 +7,134 @@
 <title>ONETAP</title>
 
 <style>
+#splash{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0F172A;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
 
+#splash h1{
+font-size:50px;
+margin:0;
+animation:zoom 2s ease;
+}
+
+#splash p{
+font-size:18px;
+margin-top:10px;
+}
+
+@keyframes zoom{
+0%{transform:scale(0.5);opacity:0;}
+100%{transform:scale(1);opacity:1;}
+}
 body{
 margin:0;
 font-family:Arial,sans-serif;
 background:#f5f7fb;
 }
-
 header{
 background:#0a4dff;
-color:white;
-padding:25px;
+color:#ffffff;
+padding:30px;
 text-align:center;
 }
 
 header h1{
 margin:0;
-font-size:38px;
+font-size:42px;
+font-weight:bold;
+color:#ffffff;
 }
 
 header p{
-margin-top:8px;
+margin-top:10px;
+font-size:18px;
+color:#ffffff;
+font-weight:bold;
 }
 
+nav a{
+text-decoration:none;
+margin:10px;
+font-weight:bold;
+color:#0a4dff;
+}
+header{
+background:#0F172A;
+color:white;
+padding:35px;
+text-align:center;
+}}
+
+header h1{
+margin:0;
+font-size:42px;
+font-weight:700;
+letter-spacing:2px;
+}}
+
+header p{
+margin-top:10px;
+font-size:16px;
+opacity:0.9;
+}}
+
 .search-box{
-padding:15px;
+padding:20px;
 text-align:center;
 }
 
 .search-box input{
 width:90%;
 max-width:500px;
-padding:12px;
-border:1px solid #ccc;
-border-radius:10px;
+padding:15px;
+border:1px solid #e5e7eb;
+border-radius:15px;
+font-size:16px;
+background:white;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
+outline:none;
 }
 
+}
+.city-box{
+background:white;
+margin:15px;
+padding:15px;
+border-radius:15px;
+text-align:center;
+}
+
+.city-box select{
+padding:10px;
+border-radius:8px;
+width:200px;
+}
 .buttons{
 text-align:center;
 margin:15px;
 }
 
+
 .main-btn{
 display:inline-block;
-padding:12px 20px;
-background:#0a4dff;
+padding:14px 24px;
+background:#0F172A;
 color:white;
 text-decoration:none;
-border-radius:10px;
+border-radius:12px;
 margin:5px;
+font-weight:bold;
 }
 
 .services{
@@ -65,52 +145,227 @@ padding:15px;
 }
 
 .card{
-background:white;
-padding:15px;
-border-radius:15px;
-box-shadow:0 2px 8px rgba(0,0,0,0.1);
+background:#ffffff;
+padding:20px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(15,23,42,0.08);
 text-align:center;
+border:1px solid #e5e7eb;
+transition:0.3s;
 }
-
 .card h3{
 margin-top:0;
+font-size:20px;
+color:#0F172A;
 }
 
 .book-btn{
 display:inline-block;
-padding:10px 15px;
-background:#25D366;
+padding:10px 18px;
+background:#3B82F6;
 color:white;
 text-decoration:none;
-border-radius:8px;
+border-radius:10px;
+font-weight:bold;
 }
-
 footer{
-background:#111;
+background:#0F172A;
 color:white;
 text-align:center;
-padding:15px;
+padding:25px;
+margin-top:30px;
+}
+#splash{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#0F172A,#111827,#1E293B);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:99999;
+color:white;
+}
+
+.logo-circle{
+width:110px;
+height:110px;
+border-radius:50%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 0 40px rgba(255,255,255,0.25);
+animation:pulse 2s infinite;
+}
+
+.logo-circle span{
+font-size:55px;
+font-weight:bold;
+color:#0F172A;
+}
+
+.tagline{
+font-size:18px;
+margin-top:10px;
+text-align:center;
+max-width:300px;
+}
+
+.founders{
+margin-top:20px;
+text-align:center;
+}
+
+.founders span{
+font-size:12px;
+letter-spacing:2px;
+opacity:0.7;
+}
+
+.f1{
+opacity:0;
+animation:showName 1s forwards;
+animation-delay:1s;
+}
+
+.f2{
+opacity:0;
+animation:showName 1s forwards;
+animation-delay:2s;
+}
+
+.loader{
+width:250px;
+height:8px;
+background:rgba(255,255,255,0.2);
+border-radius:20px;
+overflow:hidden;
 margin-top:20px;
 }
 
+.loader-fill{
+height:100%;
+width:0%;
+background:white;
+animation:loading 4s linear forwards;
+}
+
+@keyframes loading{
+from{width:0%;}
+to{width:100%;}
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+@keyframes showName{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 </style>
 
 </head>
-
+<script>
+setTimeout(function(){
+document.getElementById("splash").style.display="none";
+},3000);
+</script>
 <body>
 
-<header>
+<div id="splash">
+
+<div class="logo-circle">
+<span>O</span>
+</div>
+
 <h1>ONETAP</h1>
-<p>Every Service, One Tap Away</p>
+
+<p class="tagline">
+From Repairs To Care — Everything In One Tap.
+</p>
+
+<div class="founders">
+<span>Founded By</span>
+
+<h3 class="f1">Umar Siddiqui</h3>
+
+<h3 class="f2">Shreyash Mishra</h3>
+</div>
+
+<p id="loadingText">
+Finding Trusted Professionals...
+</p>
+
+<div class="loader">
+<div class="loader-fill"></div>
+</div>
+
+</div>
+
+
+<header>
+<nav>
+<header>
+<h1 style="color:white;">ONETAP</h1>
+<p style="color:white;">Your Trusted Home Services Platform</p>
+<p style="color:white;"><b>Co-Founders:</b> Umar Siddiqui & Shreyash Mishra</p>
 </header>
 
+</header>
+
+<div style="text-align:center;padding:40px 20px;background:#F8FAFC;border-radius:20px;margin:15px;">
+<h2 style="font-size:32px;color:#0F172A;margin-bottom:10px;">
+🏠 Book Trusted Home Services
+</h2>
+<h3 style="color:#3B82F6;text-align:center;">🏠 Home Maintenance</h3>
+<p style="color:#64748B;font-size:18px;">
+Fast • Reliable • Affordable
+</p>
+
+<p style="color:#0F172A;font-weight:bold;">
+10+ Professional Services Available
+</p>
+</div>
+</nav>
 <div class="search-box">
 <input type="text" placeholder="Search Services...">
 </div>
+<div class="city-box">
+<h3>📍 Select Your City</h3>
 
+<select>
+<option>Prayagraj</option>
+<option>Lucknow</option>
+<option>Kanpur</option>
+<option>Pratapgarh</option>
+</select>
+
+</div>
 <div class="buttons">
 <a class="main-btn" href="service.html">Book Service</a>
 <a class="main-btn" href="worker.html">Join as Worker</a>
+</div>
+<div style="text-align:center; margin:20px;">
+<a href="tel:9579810395" class="main-btn">
+📞 Contact Us
+</a>
+</div>
+<div style="text-align:center;padding:10px;">
+<h2 style="color:#0F172A;">Our Services</h2>
+<p>Trusted professionals at your doorstep</p>
 </div>
 
 <div class="services">
@@ -126,7 +381,7 @@ margin-top:20px;
 </div>
 
 <div class="card">
-<h3>💧 RO Service</h3>
+<h3>💇 salon  </h3>
 <a class="book-btn" href="service.html">Book</a>
 </div>
 
@@ -136,7 +391,7 @@ margin-top:20px;
 </div>
 
 <div class="card">
-<h3>🪚 Carpenter</h3>
+<h3> 🚖 car booking</h3>
 <a class="book-btn" href="service.html">Book</a>
 </div>
 
@@ -154,22 +409,76 @@ margin-top:20px;
 <h3>🌱 Gardener</h3>
 <a class="book-btn" href="service.html">Book</a>
 </div>
-
 <div class="card">
-<h3>📹 CCTV Installation</h3>
+<h3>👨‍🏫 Home Tutor</h3>
+<a class="book-btn" href="service.html">Book</a>
+</div>
+<div class="card">
+<h3>🧺 Laundry Service</h3>
 <a class="book-btn" href="service.html">Book</a>
 </div>
 
+</div>
 <div class="card">
-<h3>💻 Computer Repair</h3>
-<a class="book-btn" href="service.html">Book</a>
-</div>
+<h3>ℹ️ About ONETAP</h3>
+<p>
+ONETAP connects customers with trusted local service providers for Electrician, Plumber, AC Repair, Carpenter, Cleaning and many more services.
+</p>
+<div class="card" style="background:#1E293B;color:white;">
+<p>⭐⭐⭐⭐⭐ Excellent Service</p>
+<p>- Rahul Singh</p>
+
+<hr>
+
+<p>⭐⭐⭐⭐⭐ Fast Response</p>
+<p>- Aman Verma</p>
+
+<hr>
+
+<p>⭐⭐⭐⭐⭐ Trusted Workers</p>
+<p>- Priya Sharma</p>
+
+<div class="card" style="background:#0F172A;color:white;">
+
+<h3>⭐ Why Choose ONETAP?</h3>
+
+<p>✅ Trusted Workers</p>
+<p>✅ Fast Service</p>
+<p>✅ Affordable Prices</p>
+<p>✅ Easy Booking</p>
+
+<div class="card" style="background:#F8FAFC;color:#111;">
+
+<p>🔧 10+ Services Available</p>
+<p>👷 Worker Registration Open</p>
+<p>📍 Multiple Cities Supported</p>
 
 </div>
 
+
+</div>
 <footer>
-© 2026 ONETAP
+<h3>ONETAP</h3>
+<p>Founded by Umar Siddiqui & Shreyash Mishra</p>
+<p>📞 9579810395</p>
+<p>© 2026 All Rights Reserved</p>
 </footer>
+<script>
 
+const text=document.getElementById("loadingText");
+
+setTimeout(()=>{
+text.innerHTML="Connecting To Your City...";
+},1200);
+
+setTimeout(()=>{
+text.innerHTML="Preparing Your Experience...";
+},2500);
+
+setTimeout(()=>{
+document.getElementById("splash").style.display="none";
+},10000);
+
+</script>
 </body>
 </html>
