@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,31 @@ body{font-family:Arial;padding:20px;background:#f4f4f4;}
 .box{background:white;padding:20px;border-radius:10px;max-width:600px;margin:auto;}
 input,select{width:100%;padding:10px;margin-top:10px;}
 button{width:100%;padding:12px;margin-top:15px;}
+
+<script>
+function joinWorker(){
+
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let skill=document.getElementById("skill").value;
+let city=document.getElementById("city").value;
+let area=document.getElementById("area").value;
+
+let message=
+"🔧 NEW WORKER REGISTRATION%0A%0A"+
+"👤 Name: "+name+"%0A"+
+"📞 Phone: "+phone+"%0A"+
+"🛠 Skill: "+skill+"%0A"+
+"🏙 City: "+city+"%0A"+
+"📍 Area: "+area;
+
+window.open(
+"https://wa.me/919579810395?text="+message,
+"_blank"
+);
+}
+</script>
+
 </style>
 </head>
 <body>
@@ -16,11 +42,10 @@ button{width:100%;padding:12px;margin-top:15px;}
 
 <h2>Join OneTap as Service Provider</h2>
 
-<input type="text" placeholder="Full Name">
+<input type="text" id="name" placeholder="Full Name">
+<input type="tel" id="phone" placeholder="Phone Number">
 
-<input type="tel" placeholder="Phone Number">
-
-<select>
+<select id="skill">
 <option>Electrician</option>
 <option>Plumber</option>
 <option>RO Technician</option>
@@ -28,16 +53,14 @@ button{width:100%;padding:12px;margin-top:15px;}
 <option>Carpenter</option>
 </select>
 
-<input type="text" placeholder="City">
+<input type="text" id="city" placeholder="City">
 
 <input type="text" placeholder="Area">
 
-<button>
+<button onclick="joinWorker()">
 Register
 </button>
-
 </div>
 
 </body>
 </html>
-
