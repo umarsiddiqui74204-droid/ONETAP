@@ -1,14 +1,16 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book Service - OneTap</title>
+<title>Book Service - ONETAP</title>
 
 <style>
 body{
-font-family:Arial;
-background:#f4f4f4;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+margin:0;
 padding:20px;
 }
 
@@ -17,70 +19,101 @@ max-width:500px;
 margin:auto;
 background:white;
 padding:20px;
-border-radius:10px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+color:#0F172A;
 }
 
 input,select,textarea{
 width:100%;
-padding:10px;
+padding:12px;
 margin-top:10px;
 margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:10px;
+box-sizing:border-box;
 }
 
 button{
-background:#0066ff;
-color:white;
-padding:12px;
-border:none;
 width:100%;
+padding:14px;
+background:#0F172A;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+}
+
+button:hover{
+cursor:pointer;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <div class="container">
 
-<h2>Request a Service</h2>
+<h1>Book a Service</h1>
 
-<form>
+<form onsubmit="sendToWhatsApp(); return false;">
 
-<input type="text" placeholder="Full Name">
+<input type="text" id="name" placeholder="Full Name" required>
 
-<input type="tel" placeholder="Phone Number">
+<input type="tel" id="phone" placeholder="Mobile Number" required>
 
-<input type="text" placeholder="Village / Area">
+<select id="service" required>
 
-<select>
+<option>Select Service</option>
 <option>Electrician</option>
 <option>Plumber</option>
-<option>RO Service</option>
 <option>AC Repair</option>
-<option>Carpenter</option>
+<option>Painter</option>
+<option>Home Cleaning</option>
+<option>Gardener</option>
+<option>Home Tutor</option>
+<option>Laundry Service</option>
+<option>Home Salon</option>
+<option>Car Booking</option>
 </select>
 
-<textarea placeholder="Describe your problem"></textarea>
+<input type="text" id="city" placeholder="City" required>
+<textarea id="address" placeholder="Full Address"></textarea>
 
 <button type="submit">
-Submit Request
+Submit Booking
 </button>
 
 </form>
 
 </div>
-<select>
-<option>Select State</option>
-<option>Uttar Pradesh</option>
-</select>
+<script>
+function sendToWhatsApp(){
 
-<select>
-<option>Select City</option>
-<option>Pratapgarh</option>
-<option>Prayagraj</option>
-<option>Lucknow</option>
-<option>Kanpur</option>
-</select>
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let service=document.getElementById("service").value;
+let city=document.getElementById("city").value;
+let address=document.getElementById("address").value;
 
-<input type="text" placeholder="Area / Locality">
+let message =
+"📌 NEW BOOKING%0A%0A"+
+"👤 Name: "+name+"%0A"+
+"📞 Phone: "+phone+"%0A"+
+"🛠 Service: "+service+"%0A"+
+"🏙 City: "+city+"%0A"+
+"📍 Address: "+address;
+
+window.open(
+"https://wa.me/919579810395?text="+message,
+"_blank"
+);
+
+}
+</script>
 </body>
 </html>
